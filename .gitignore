@@ -1,8 +1,2 @@
 .env
 node_modules
-style.css
-teamStatsRouter.js
-index.ejs
-invalid.ejs
-stats.ejs
-app.js
