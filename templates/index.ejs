@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>NBA Team Lookup</title>
+</head>
+<body>
+  <link rel="stylesheet" href="/style.css"/>
+  <h1>NBA Team Statistics Form</h1>
+
+  <form action="<%= baseURL %>/teamStats" method="get">
+    <fieldset>
+      <legend><strong>Team Information</strong></legend>
+      <label>Team Name: <input type="text" name="teamName" placeholder="Lakers" required></label>
+      <label>Season Year: <input type="text" name="seasonYear" placeholder="2023" required></label>
+    </fieldset>
+    <input type="reset" />
+    <input type="submit" value="Search"/>
+  </form>
+
+  <br>
+  <h1>Unpopular Opinions</h1>
+
+  <div id="opinions">
+    <ul>
+      <% opinions.forEach(op => { %>
+        <li><strong><%= op.name %>:</strong> <%= op.opinion %></li>
+      <% }) %>
+    </ul>
+
+    <form action="<%= baseURL %>/submitOpinion" method="post">
+      <label>Name: <input type="text" name="name" placeholder="Bob" required></label>
+      <label>Unpopular Opinion: <input type="text" size="50" name="opinion" placeholder="Warriors are overrated" required></label>
+      <input type="submit" value="Submit Opinion">
+      <input type="reset">
+    </form>
+  </div>
+</body>
+</html>
